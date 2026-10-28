@@ -75,17 +75,18 @@ describes ADC limits and clocking. This notebook does not update capture-board
 firmware. Disconnect the old notebook before opening this connection.
 
 
-## Fresh-session connection failures
 
-The notebook reloads the bundled FPGA configuration using
-`cw.scope(force=True, prog_speed=1_000_000)` before setting the lab clock and
-I/O. This loads volatile FPGA configuration, separately from USB firmware
-updates. An earlier `Unknown hwInfoVer: Default/Unknown` / `Unknown
-ChipWhisperer` error means connection did not finish. Stop at that error; no
-verified recorder exists yet. Saved programming output from another kernel
-does not establish current state. Run both section 4 cells after section 3
-succeeds. Survey now checks this prerequisite before acquisition.
+## Short lab startup and error cleanup
 
-If the connection still fails, close other device-owning kernels, reconnect
-USB, restart the kernel and retry section 3. Do not proceed with capture after
-a connection failure.
+Startup clears FAST_FIFO_READ_MODE and restores normal SMC register-read timing
+before the standard cw.scope call. It does not force an FPGA reload or update
+capture-board firmware. The failed/interrupted non-streaming ADC-download path
+also attempts normal-mode cleanup before rethrowing the original exception.
+The measured one-byte-shifted VERSION/ECHO replies recovered after normal-mode
+restoration; the previous operation that left the modes mismatched was not
+established.
+
+The short lab captures only the fixed 512-sample window in proof-preset.json.
+It programs the target only after matching the calibrated image hash, resets
+the target after clock configuration, then makes two verified non-model warmup
+calls. Recalibration is available in the full-method notebook.

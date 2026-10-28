@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "target_platform": "CW308_STM32F4",
+  "scope_model": "Husky",
+  "target_clock_hz": 7372800,
+  "adc_multiplier": 4,
+  "offset": 95336,
+  "samples": 512,
+  "gain_db": 10.0,
+  "baud": 38400,
+  "firmware_sha256": "fbe72dbef701cfd52eb08b3ca895c66112c9296e3d89797c0ff2301b318f91f3",
+  "source_commit": "fd72834bd789c644b52fe0d62b2fa3b9f34dfaec",
+  "reference_run": "vt-v2-20261028T220911Z-09b982",
+  "reference_window": [
+    93160,
+    9344
+  ],
+  "reference_roi": [
+    2176,
+    2688
+  ],
+  "candidate_index": 0,
+  "pair_iterations": 160,
+  "rationale": "Fixed before new training/test collection, from the independently evaluated physical run. Requires this exact target image, clock ratio and warmed target."
+}
