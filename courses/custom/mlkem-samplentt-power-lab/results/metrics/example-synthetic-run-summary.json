@@ -1,0 +1,9 @@
+{
+  "run_id": "20261028T185258Z-844e18d9",
+  "source_commit": "fd72834bd789c644b52fe0d62b2fa3b9f34dfaec",
+  "mode": "synthetic pipeline validation",
+  "ground_truth_validated_against_C": true,
+  "hardware_acquired": false,
+  "hardware_leakage_established": false,
+  "next_step": "Select the capture device, target MCU, programmer and clock/wiring; capture one verified variable-time trace."
+}

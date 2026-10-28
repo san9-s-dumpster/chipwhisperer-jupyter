@@ -1,0 +1,107 @@
+{
+  "utc": "2026-10-28T21:52:49.786794+00:00",
+  "python": "3.14.4",
+  "chipwhisperer_version": "7.0.0",
+  "chipwhisperer_path": "/home/ubuntu/Desktop/work/chipwhisperer-new/software/chipwhisperer/__init__.py",
+  "bundled_usb_firmware": "1.7.0",
+  "requested_serial": "502032204c5846303230373132313032",
+  "reads": [
+    {
+      "settings_control": [
+        255
+      ],
+      "version_control": [
+        255,
+        2,
+        80,
+        0,
+        0,
+        0
+      ],
+      "echo_control": [
+        255,
+        240,
+        222,
+        188,
+        154,
+        120,
+        86,
+        52
+      ],
+      "version_bulk": {
+        "error": "USBErrorIO: LIBUSB_ERROR_IO [-1]"
+      },
+      "decoded_fpga_hardware_type": 0
+    },
+    {
+      "settings_control": [
+        255
+      ],
+      "version_control": [
+        255,
+        2,
+        80,
+        0,
+        0,
+        0
+      ],
+      "echo_control": [
+        255,
+        240,
+        222,
+        188,
+        154,
+        120,
+        86,
+        52
+      ],
+      "version_bulk": {
+        "error": "USBErrorIO: LIBUSB_ERROR_IO [-1]"
+      },
+      "decoded_fpga_hardware_type": 0
+    },
+    {
+      "settings_control": [
+        255
+      ],
+      "version_control": [
+        255,
+        2,
+        80,
+        0,
+        0,
+        0
+      ],
+      "echo_control": [
+        255,
+        240,
+        222,
+        188,
+        154,
+        120,
+        86,
+        52
+      ],
+      "version_bulk": {
+        "error": "USBErrorIO: LIBUSB_ERROR_IO [-1]"
+      },
+      "decoded_fpga_hardware_type": 0
+    }
+  ],
+  "usb_product_id": "0xace5",
+  "serial": "502032204c5846303230373132313032",
+  "usb_firmware": [
+    1,
+    7,
+    0
+  ],
+  "usb_build_date": "09:22:43 May 26 2026",
+  "fpga_status": [
+    1,
+    0,
+    0,
+    0
+  ],
+  "fpga_done_pin": true,
+  "fpga_init_b_pin": false
+}

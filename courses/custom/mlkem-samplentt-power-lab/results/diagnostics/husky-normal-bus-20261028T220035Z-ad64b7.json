@@ -1,0 +1,90 @@
+{
+  "serial": "502032204c5846303230373132313032",
+  "operation": "leave fast FIFO mode and restore normal SMC read timing",
+  "before_version": [
+    255,
+    2,
+    80,
+    0,
+    0,
+    0
+  ],
+  "before_echo": [
+    255,
+    240,
+    222,
+    188,
+    154,
+    120,
+    86,
+    52
+  ],
+  "after": [
+    {
+      "version": [
+        2,
+        80,
+        0,
+        0,
+        0,
+        0
+      ],
+      "echo": [
+        240,
+        222,
+        188,
+        154,
+        120,
+        86,
+        52,
+        18
+      ]
+    },
+    {
+      "version": [
+        2,
+        80,
+        0,
+        0,
+        0,
+        0
+      ],
+      "echo": [
+        240,
+        222,
+        188,
+        154,
+        120,
+        86,
+        52,
+        18
+      ]
+    },
+    {
+      "version": [
+        2,
+        80,
+        0,
+        0,
+        0,
+        0
+      ],
+      "echo": [
+        240,
+        222,
+        188,
+        154,
+        120,
+        86,
+        52,
+        18
+      ]
+    }
+  ],
+  "register_reads_recovered": true,
+  "startup_fix": {
+    "status": "installed",
+    "notebook": "/home/ubuntu/Desktop/work/chipwhisperer-new/jupyter/courses/custom/Lab 7_1 - ML-KEM SampleNTT Power Lab.ipynb",
+    "backup": "/home/ubuntu/Desktop/work/chipwhisperer-new/jupyter/courses/custom/mlkem-samplentt-power-lab/archive/normal-bus-recovery-20261028T220035Z-e8e5d6"
+  }
+}

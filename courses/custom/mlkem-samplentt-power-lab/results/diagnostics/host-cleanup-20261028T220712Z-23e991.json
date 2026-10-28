@@ -1,0 +1,7 @@
+{
+  "utc": "2026-10-28T22:07:12.822250+00:00",
+  "returncode": 0,
+  "stdout": "\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m                                                 [100%]\u001b[0m\n\u001b[32m\u001b[32m\u001b[1m24 passed\u001b[0m\u001b[32m in 2.60s\u001b[0m\u001b[0m\n",
+  "stderr": "",
+  "backend_sha256": "5093e71edf761dcc7f38156e25bb8191dc016804adb79e4f07e9f67e11c0d206"
+}

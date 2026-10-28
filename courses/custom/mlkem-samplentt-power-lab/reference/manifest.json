@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/afonsoarriaga/ProjectTempo",
+  "commit": "fd72834bd789c644b52fe0d62b2fa3b9f34dfaec",
+  "files_sha256": {
+    "include/algorithms.h": "95ca0e2865bcf016a7220745328398037d96d4b753ed9c9735620698f2fa9313",
+    "include/config.h": "8b8e8a324b51de41d0f2b618243bf3faac14d4941bc37e8926d8fa853fb1bd6a",
+    "include/fips202.h": "bf99a54bc1988380418054a18bd5a14d059770e70c1aac23b6d9c914539168e0",
+    "src/algorithm_a0.c": "fd830013b8ea3d6016955d2da99b2b8cb4553e33976e134ac1ff42ea898a3b5b",
+    "src/algorithm_a1.c": "f502becc3490bd907041d7f6faaced1063e14170e80a76b15c4e8fbe48519b28",
+    "src/fips202.c": "4871baddebf2d4771d86b5088719123e2e43addce1a3c0eca75b4d18970ffc1f",
+    "LICENSE": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+    "README.md": "f1019685782289e6d72ce0790c2f72a835d576f8d225edcf25b9b64daa5f9c6a",
+    "src/pqm4/crypto_kem/noic-a0-mlkem512/ref/samplentt.c": "ea463c2b43861d1504bb498b55719aa1e9126bae941ff6f7b7d4436c50e2170d",
+    "src/pqm4/crypto_kem/noic-a1-mlkem512/ref/samplentt.c": "9e852f62b7881f68f6791bc652af0ec345b4430e3f9377ddea4bb65d94047189"
+  },
+  "selection": "Top-level A0/A1 used for host validation and firmware; pqm4 copies retained for inspection only."
+}

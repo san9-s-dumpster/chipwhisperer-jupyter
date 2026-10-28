@@ -1,0 +1,13 @@
+Original code in this laboratory workspace is licensed under the GNU General
+Public License, version 3 or (at your option) any later version.
+
+SPDX-License-Identifier: GPL-3.0-or-later
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. The full license is available at:
+https://www.gnu.org/licenses/gpl-3.0.html
+
+Files in reference/tempo are upstream ProjectTempo files, unchanged, and
+retain the license and notices in reference/tempo/LICENSE (Apache-2.0),
+including the upstream statements regarding public-domain SHA-3 code.
