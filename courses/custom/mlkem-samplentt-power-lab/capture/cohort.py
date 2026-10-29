@@ -29,8 +29,15 @@ def acquire_cohort(backend, plan, role, directory, frozen_path=None, progress=No
     """
     if role not in ('development','holdout'):
         raise ValueError('unknown cohort')
-    if backend.build.get('profile','measurement') != 'measurement' or backend.build['variant'] != 'variable_time':
-        raise ValueError('restore representative variable-time firmware before collecting cohorts')
+    variant = plan.get('variant', 'variable_time')
+    if variant not in ('variable_time', 'fls'):
+        raise ValueError('unknown planned sampler variant')
+    if backend.build.get('profile','measurement') != 'measurement' or backend.build['variant'] != variant:
+        raise ValueError(f'restore representative {variant} firmware before collecting cohorts')
+    record_signature = signature
+    if variant == 'fls':
+        # FLS additionally binds target clock and the explicit ADC warning policy.
+        from analysis.fls import signature as record_signature
     frozen = None
     if role == 'holdout':
         if frozen_path is None:
@@ -51,7 +58,7 @@ def acquire_cohort(backend, plan, role, directory, frozen_path=None, progress=No
             json.dump(header,f,indent=2)
     trials = [(seed, rep) for seed in plan['cohorts'][role] for rep in range(plan['repeats'])]
     existing = read_cohort(directory)
-    reference = frozen['signature'] if frozen else (signature(existing[0]) if existing else None)
+    reference = frozen['signature'] if frozen else (record_signature(existing[0]) if existing else None)
     order = np.random.default_rng(plan['order_seed'] + int(role=='holdout')).permutation(len(trials))
     pending = [(position,int(trial)) for position,trial in enumerate(order)
                if not (directory/f'trial-{int(trial):05d}'/'manifest.json').exists()]
@@ -61,13 +68,13 @@ def acquire_cohort(backend, plan, role, directory, frozen_path=None, progress=No
         seed, rep = trials[trial]
         entry = dict(utc=datetime.now(timezone.utc).isoformat(), trial=trial, seed=seed, repeat=rep)
         try:
-            record = backend.capture(bytes.fromhex(seed),plan['x'],plan['y'],'variable_time')
+            record = backend.capture(bytes.fromhex(seed),plan['x'],plan['y'],variant)
             record.metadata.update(plan_sha256=plan['sha256'], cohort=role, repeat=rep,
                 trial=trial, sequence=position, acquisition_utc=entry['utc'],
                 frozen_sha256=header['frozen_sha256'])
             if reference is None:
-                reference = signature(record)
-            if signature(record) != reference:
+                reference = record_signature(record)
+            if record_signature(record) != reference:
                 raise ValueError('capture conditions changed from the existing cohort/frozen model')
             # Commit a complete checkpoint with one atomic directory rename.
             # An interrupt during compression must not poison a resumed trial.
