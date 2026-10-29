@@ -14,8 +14,10 @@ from analysis.c_reference import verify_sources
 def build(chipwhisperer, platform, variant, optimization="2", profile="measurement"):
     if profile not in ("measurement", "calibration"):
         raise ValueError("unknown firmware profile")
-    if profile == "calibration" and (variant != "variable_time" or platform != "CW308_STM32F4"):
-        raise ValueError("DWT calibration supports variable_time on CW308_STM32F4 only")
+    if variant not in ("variable_time", "fls"):
+        raise ValueError("unknown sampler variant")
+    if profile == "calibration" and platform != "CW308_STM32F4":
+        raise ValueError("DWT calibration supports CW308_STM32F4 only")
     source = verify_sources()
     cw = Path(chipwhisperer).expanduser().resolve()
     mcu = cw/"firmware/mcu"

@@ -143,6 +143,8 @@ def test_all_seven_notebook_cells_with_fake_device(fake_hardware):
     namespace={'__name__':'__main__'};count=0
     for cell in nb.cells:
         if cell.cell_type!='code':continue
+        # Users may add scratch cells; exercise the seven authored lab roles.
+        if cell.metadata.get('lab_role') is None:continue
         source=cell.source
         if cell.metadata['lab_role']=='proof_setup':
             source=source.replace("REPO = Path.home() / 'Desktop/work/chipwhisperer-new'",'REPO = Path('+repr(str(repo))+')')

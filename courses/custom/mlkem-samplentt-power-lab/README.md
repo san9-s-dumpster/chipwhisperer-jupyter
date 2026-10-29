@@ -1,4 +1,14 @@
-# SampleNTT single-trace power lab
+# ML-KEM SampleNTT labs
+
+All hardware notebooks live together in [the custom folder](../):
+
+- [Short A0 lab](../Lab%207_1%20-%20ML-KEM%20SampleNTT%20Power%20Lab.ipynb) — fixed validated window.
+- [Full A0 method](../Full%20SampleNTT%20Method.ipynb) — calibration and window development; existing outputs preserved.
+- [FLS lab](../Lab%207_2%20-%20ML-KEM%20FLS%20Power%20Lab.ipynb) — new A1 calibration, frozen power classifier, fresh test and separate timing diagnostics.
+
+The FLS notebook uses Husky + CW308_STM32F4 and chipwhisperer-new/.venv. It compiles/programs only the STM32 target when its hardware cells are run. No FLS measurements have been taken by installing these files.
+
+## Short A0 lab
 
 Open **Lab 7_1 - ML-KEM SampleNTT Power Lab.ipynb** in the parent custom folder.
 The short lab has seven executable cells: setup, hardware preparation, training
@@ -14,7 +24,7 @@ and rejects changed settings or contaminated/incomplete cohorts.
 The window is fixed from the validated physical experiment, rather than searched
 again in every run. proof-preset.json binds its sample positions to the exact
 firmware image. A changed image stops preparation before target programming;
-use docs/Full SampleNTT Method.ipynb to recalibrate. Two check calls warm the
+use ../Full SampleNTT Method.ipynb to recalibrate. Two check calls warm the
 target before model data. FLS and repeated-trace averaging are deferred.
 
 The model predicts first-candidate accept/reject on balanced, workload-matched
@@ -33,7 +43,7 @@ The original full notebook and measured 256/256-success run are preserved.
 checkpoints/validated-2026-10-28 contains the Git-backed data/build archive,
 its checksum manifest, and the independent evaluation. Existing results/runs
 are unchanged and remain ignored by Git; every new capture run gets a unique
-folder. The full historical pipeline remains in docs/Full SampleNTT Method.ipynb.
+folder. The full historical pipeline remains in ../Full SampleNTT Method.ipynb.
 
 Run software checks from this companion folder with python -m pytest -q.
 Fake-device tests never establish physical leakage. Original code is

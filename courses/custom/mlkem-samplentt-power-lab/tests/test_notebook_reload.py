@@ -22,7 +22,7 @@ def prevent_physical_usb_in_notebook_tests(monkeypatch):
 
 
 def cell_source(role):
-    notebook=ROOT/'docs/Full SampleNTT Method.ipynb'
+    notebook=ROOT.parent/'Full SampleNTT Method.ipynb'
     cells=json.loads(notebook.read_text())['cells']
     return next(''.join(c['source']) for c in cells if c.get('metadata',{}).get('lab_role')==role)
 
