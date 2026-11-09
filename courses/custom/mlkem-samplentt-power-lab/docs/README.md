@@ -1,12 +1,11 @@
 # Detailed reference
 
-Start with the [short project overview](../../README.md). These files support deeper inspection and migration.
+Start with the [short project overview](../../README.md). These files support deeper inspection of the experiment.
 
 | Reference | Contents |
 |---|---|
 | [Technical notes](technical-notes.md) | Earlier notebook explanations and implementation details, preserved before simplifying the entry documentation. |
 | [Long walkthrough](details/SampleNTT%20and%20FLS%20explanation.md) | The original approximately 30-minute explanation, preserved verbatim. Its figure link uses the original PC's absolute path. |
-| [Project handoff](details/SampleNTT%20project%20handoff.md) | Original migration checklist, exact versions, historical commit IDs, raw-data locations and known issues. Paths and HEAD refer to when it was written. |
 | [Hardware](hardware.md) | Wiring, serial protocol, capture settings and bus recovery. |
 | [Sampler source inspection](reference-inspection.md) | Pinned A0/A1 behavior and differences from the upstream pqm4 copy. |
 | [A0 analysis](distinguisher.md) | Full-method experiment design. |
